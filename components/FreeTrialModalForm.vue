@@ -54,12 +54,12 @@
           </div>
         </div>
         <div class="flex -mx-3">
-          <div class="w-full md:w-1/2 px-3 mb-1 md:mb-0">
+          <div class="w-full md:w-1/2 px-3 md:mb-0">
             <label
               class="block tracking-wide text-dark-blue text-sm font-normal mb-2"
               for="grid-first-name"
             >
-              State of residence
+              State of Residence
             </label>
             <input
               class="appearance-none block w-full bg-white text-gray-700 border border-greyish-blue rounded py-2 px-4 mb-3 leading-tight focus:outline-none focus:bg-white placeholder:text-sm"
@@ -69,21 +69,22 @@
             />
           </div>
 
-          <div class="w-full md:w-1/2 px-3 mb-1 md:mb-0">
+          <div class="w-full md:w-1/2 px-3 md:mb-0">
             <label
               class="block tracking-wide text-dark-blue text-sm font-normal mb-2"
               for="grid-last-name"
             >
               How Did You Hear About Us?
             </label>
-            <select
-              name="country"
-              class="bg-white text-dark-blue focus-outline-none"
-            >
-              <option>United States</option>
-            </select>
+            <input
+              class="appearance-none block w-full bg-white text-gray-700 border border-greyish-blue rounded py-2 px-4 mb-3 leading-tight focus:outline-none focus:bg-white placeholder:text-sm"
+              id="grid-last-name"
+              type="text"
+              placeholder="eg. Piedpiper"
+            />
           </div>
         </div>
+
         <button
           @click="isOpen = false"
           class="px-6 py-2 w-full md:w-72 my-2 text-black-800 border border-blue-600 rounded border-2 border-primary-yellow bg-primary-yellow"

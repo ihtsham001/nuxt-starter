@@ -50,14 +50,14 @@
         class="rounded-md w-full focus:outline-none border-0 text-sm bg-transparent placeholder:text-border-gray text-black"
         placeholder="Ask me anything... "
       />
-      <div class="flex flex-row mr-2">
+      <div class="flex flex-row mr-4 md:mr-2 md:mr-2 lg:mr-2 xl:mr-2 xxl:mr-2">
         <img
           src="~assets/images/file.svg"
-          class="right-12 top-6 h-4 w-4 mx-1 text-gray-400 cursor-pointer"
+          class="right-12 top-6 h-4 w-4 ml-1 md:mr-2 md:mr-2 lg:mr-2 xl:mr-2 xxl:mr-2 text-gray-400 cursor-pointer"
         />
         <img
           src="~assets/images/send.svg"
-          class="right-3 top-6 h-4 w-4 mx-2 text-gray-400 cursor-pointer"
+          class="right-3 top-6 h-4 w-4 ml-1 text-gray-400 cursor-pointer"
         />
       </div>
     </div>

@@ -121,11 +121,11 @@
     <nav>
       <ul class="px-2 pt-3">
         <li
-          class="py-1 flex items-center text-sm bg-white rounded-lg justify-between cursor-pointer"
+          class="py-1 flex items-center bg-white rounded-lg justify-between cursor-pointer"
           @click="navigateTo('/chat/1')"
         >
           <span
-            class="py-2 ml-1 pl-3 flex text-sm items-center text-gray-600 hover:text-gray-900 border-l-4 border-primary-yellow text-semibold"
+            class="py-2 ml-1 pl-3 flex text-xs font-semibold items-center text-gray-600 hover:text-gray-900 border-l-4 border-primary-yellow"
           >
             I need personal Tax advice
           </span>
@@ -148,7 +148,7 @@
           @click="navigateTo('/chat/2')"
         >
           <span
-            class="py-2 ml-1 pl-3 flex text-sm items-center text-gray-600 hover:text-gray-900 border-l-4 border-primary-yellow text-semibold"
+            class="py-2 ml-1 pl-3 flex text-xs items-center font-semibold text-gray-600 hover:text-gray-900 border-l-4 border-primary-yellow"
           >
             I need personal Tax advice
           </span>
