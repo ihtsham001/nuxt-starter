@@ -1,0 +1,30 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "nuxt": "^3.4.3",
+    "nuxt-icon": "^0.4.1",
+    "postcss": "^8.4.24",
+    "sass": "^1.62.1",
+    "tailwindcss": "^3.3.2"
+  },
+  "dependencies": {
+    "@nuxtjs/tailwindcss": "^6.8.0",
+    "@pinia/nuxt": "^0.4.9",
+    "@popperjs/core": "^2.11.7",
+    "@types/bootstrap": "^5.2.6",
+    "ably": "^1.2.41",
+    "axios": "^1.4.0",
+    "bootstrap": "^5.2.3",
+    "bootstrap-vue": "^2.23.1",
+    "pinia": "^2.0.35"
+  }
+}
