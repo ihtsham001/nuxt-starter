@@ -121,11 +121,11 @@
     <nav>
       <ul class="px-2 pt-3">
         <li
-          class="py-2 flex items-center text-sm bg-white rounded-lg justify-between"
+          class="py-1 flex items-center text-sm bg-white rounded-lg justify-between cursor-pointer"
           @click="navigateTo('/chat/1')"
         >
           <span
-            class="ml-4 flex items-center text-gray-600 hover:text-gray-900"
+            class="py-2 ml-1 pl-3 flex text-sm items-center text-gray-600 hover:text-gray-900 border-l-4 border-primary-yellow text-semibold"
           >
             I need personal Tax advice
           </span>
@@ -140,15 +140,15 @@
               alt="User Avatar"
               class="w-4 h-4 mr-2"
             />
-            <span class="text-gray-400 text-sm mr-2">12:00 PM</span>
+            <span class="text-gray-400 text-xs mr-2">12:00 PM</span>
           </div>
         </li>
         <li
-          class="py-2 flex items-center bg-white rounded-lg justify-between mt-2"
+          class="py-1 flex items-center bg-white rounded-lg justify-between mt-2 cursor-pointer"
           @click="navigateTo('/chat/2')"
         >
           <span
-            class="ml-4 flex text-sm items-center text-gray-600 hover:text-gray-900"
+            class="py-2 ml-1 pl-3 flex text-sm items-center text-gray-600 hover:text-gray-900 border-l-4 border-primary-yellow text-semibold"
           >
             I need personal Tax advice
           </span>
@@ -163,7 +163,7 @@
               alt="User Avatar"
               class="w-4 h-4 mr-2"
             />
-            <span class="text-gray-400 text-sm mr-2">12:00 PM</span>
+            <span class="text-gray-400 text-xs mr-2">12:00 PM</span>
           </div>
         </li>
       </ul>
