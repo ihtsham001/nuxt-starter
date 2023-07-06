@@ -157,7 +157,7 @@
           <div
             :class="{
               'border-b border-[#2c2c2c]': selectedId !== data.id,
-              'mt-1': selectedId === data.id,
+              '': selectedId === data.id,
             }"
           >
             <li

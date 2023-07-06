@@ -32,7 +32,7 @@
                   First Name
                 </label>
                 <input
-                  class="appearance-none block w-full bg-white text-gray-700 border border-greyish-blue rounded py-2 px-4 mb-3 leading-tight focus:outline-none focus:bg-white placeholder:text-sm"
+                  class="appearance-none block w-full bg-white text-gray-700 border border-greyish-blue rounded py-2 px-2 mb-3 leading-tight focus:outline-none focus:bg-white placeholder:text-sm"
                   id="grid-first-name"
                   type="text"
                   placeholder="eg. richard@piedpiper.com"
@@ -47,7 +47,7 @@
                   Last Name
                 </label>
                 <input
-                  class="appearance-none block w-full bg-white text-gray-700 border border-greyish-blue rounded py-2 px-4 mb-3 leading-tight focus:outline-none focus:bg-white placeholder:text-sm"
+                  class="appearance-none block w-full bg-white text-gray-700 border border-greyish-blue rounded py-2 px-2 mb-3 leading-tight focus:outline-none focus:bg-white placeholder:text-sm"
                   id="grid-last-name"
                   type="text"
                   placeholder="eg. Piedpiper"
@@ -63,7 +63,7 @@
                   State of Residence
                 </label>
                 <input
-                  class="appearance-none block w-full bg-white text-gray-700 border border-greyish-blue rounded py-2 px-4 mb-3 leading-tight focus:outline-none focus:bg-white placeholder:text-sm"
+                  class="appearance-none block w-full bg-white text-gray-700 border border-greyish-blue rounded py-2 px-2 mb-3 leading-tight focus:outline-none focus:bg-white placeholder:text-sm"
                   id="grid-residence"
                   type="text"
                   placeholder="Enter Business State"
@@ -79,9 +79,9 @@
                 </label>
                 <div class="relative">
                   <select
-                    class="block appearance-none w-full bg-transparent border text-stone-gray hover:text-stone-gray border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded leading-tight focus:outline-none focus:shadow-outline"
+                    class="block appearance-none w-full bg-white border text-stone-gray hover:text-stone-gray border-gray-400 hover:border-gray-500 px-2 py-2 pr-8 rounded leading-tight focus:outline-none focus:shadow-outline"
                   >
-                    <option class="text-red">Select an option</option>
+                    <option>Select an option</option>
                     <option>Option 1</option>
                     <option>Option 2</option>
                     <option>Option 3</option>
@@ -91,8 +91,8 @@
                   >
                     <svg
                       fill="#000000"
-                      height="15px"
-                      width="15px"
+                      height="12px"
+                      width="12px"
                       version="1.1"
                       id="Layer_1"
                       xmlns="http://www.w3.org/2000/svg"
@@ -128,7 +128,7 @@
                   Set Password
                 </label>
                 <input
-                  class="appearance-none block w-full bg-white text-gray-700 border border-greyish-blue rounded py-2 px-4 mb-1 leading-tight focus:outline-none focus:bg-white placeholder:text-sm"
+                  class="appearance-none block w-full bg-white text-gray-700 border border-greyish-blue rounded py-2 px-2 mb-1 leading-tight focus:outline-none focus:bg-white placeholder:text-sm"
                   id="grid-password"
                   type="password"
                   placeholder="*********"
@@ -140,7 +140,7 @@
             <button
               @click="close()"
               type="submit"
-              class="px-6 py-2 w-full md:w-72 my-2 text-black-800 border border-blue-600 rounded border-2 border-primary-yellow bg-primary-yellow"
+              class="px-6 py-2 w-full md:w-72 my-2 text-black-800 rounded border border-primary-yellow bg-primary-yellow"
             >
               Start Trial
             </button>

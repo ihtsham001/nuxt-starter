@@ -53,7 +53,7 @@
         <div class="mt-3 mb-2 flex flex-col items-center">
           <div
             @click="isOpen = false"
-            class="flex items-center justify-center gap-2 font-medium px-6 py-2 border-primary-yellow bg-primary-yellow rounded w-full text-center"
+            class="flex items-center justify-center gap-2 font-medium px-6 py-2 border-primary-yellow bg-primary-yellow rounded w-full text-center cursor-pointer"
           >
             <span
               ><svg

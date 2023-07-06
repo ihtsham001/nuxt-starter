@@ -1,6 +1,6 @@
 <template>
-  <div class="flex flex-col h-screen bg-gray-100 p-4">
-    <div class="flex-1 overflow-y-auto">
+  <div class="flex flex-col h-screen bg-gray-100 p-4 px-5">
+    <div class="flex-1 overflow-y-auto custom-scrollbar">
       <div class="flex flex-col space-y-2">
         <div class="flex items-start justify-start items-center">
           <img
@@ -78,12 +78,6 @@
     <div
       class="flex flex-col md:flex-row lg:flex-row xl:flex-row items-center justify-center mt-2 gap-2"
     >
-      <button
-        class="w-30 hidden md:block lg:block xl:block xxl:block font-semibold text-base whitespace-nowrap hover:text-black py-2 px-3 rounded mr-5 border-2 border-primary-yellow bg-primary-yellow"
-        @click="navigateTo('/')"
-      >
-        + New Chat
-      </button>
       <div
         class="w-70 flex flex-row gap-2 pr-2 items-center md:flex-row lg:flex-row xl:flex-row text-center p-2 rounded-md w-full focus:outline-none border-2 border-primary-yellow text-primary-yellow"
       >
@@ -130,3 +124,10 @@ const sendMessage = async () => {
   prompt.value = "";
 };
 </script>
+
+<style>
+.custom-scrollbar::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+</style>
