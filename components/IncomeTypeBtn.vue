@@ -1,13 +1,22 @@
 <template>
   <div v-for="(btn, index) in btnText" :key="index">
     <button
-      class="font-semibold hover:text-primary-yellow py-2 px-3 rounded border-2 hover:border-primary-yellow border-gray-300 text-gray-400"
+      class="font-semibold py-2 px-3 rounded border-2 border-gray-300 text-gray-400"
+      :class="{
+        'border-primary-yellow text-primary-yellow': btn.id === selectedId,
+      }"
+      @click="handleClick(btn.id)"
     >
       {{ btn.text }}
     </button>
   </div>
 </template>
 <script setup>
+const selectedId = useState(() => null);
+
+const handleClick = (id) => {
+  selectedId.value = id;
+};
 const btnText = [
   {
     id: "Doesn't Matter",

@@ -119,53 +119,91 @@
     </div>
 
     <nav>
-      <ul class="px-2 pt-3">
+      <ul class="px-2 pt-2">
         <li
-          class="py-1 flex items-center bg-white rounded-lg justify-between cursor-pointer"
-          @click="navigateTo('/chat/1')"
+          class="py-1 flex items-center font-medium rounded-lg mt-2 mb-3 cursor-pointer border-2 border-dashed border-primary-yellow"
         >
-          <span
-            class="py-2 ml-1 pl-3 flex text-xs font-semibold items-center text-gray-600 hover:text-gray-900 border-l-4 border-primary-yellow"
-          >
-            I need personal Tax advice
+          <span class="ml-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+            >
+              <path
+                d="M8.2002 4V12.4"
+                stroke="white"
+                stroke-width="1.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M4 8.19922H12.4"
+                stroke="white"
+                stroke-width="1.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
           </span>
-          <div class="d-flex items-center">
-            <img
-              src="~assets/images/message-edit.png"
-              alt="User Avatar"
-              class="w-4 h-4 mr-3"
-            />
-            <img
-              src="~assets/images/trash.png"
-              alt="User Avatar"
-              class="w-4 h-4 mr-2"
-            />
-            <span class="text-gray-400 text-xs mr-2">12:00 PM</span>
-          </div>
-        </li>
-        <li
-          class="py-1 flex items-center bg-white rounded-lg justify-between mt-2 cursor-pointer"
-          @click="navigateTo('/chat/2')"
-        >
           <span
-            class="py-2 ml-1 pl-3 flex text-xs items-center font-semibold text-gray-600 hover:text-gray-900 border-l-4 border-primary-yellow"
+            class="py-2 pl-3 flex text-xs items-center font-semibold text-white"
           >
-            I need personal Tax advice
+            New chat
           </span>
-          <div class="d-flex items-center">
-            <img
-              src="~assets/images/message-edit.png"
-              alt="User Avatar"
-              class="w-4 h-4 mr-3"
-            />
-            <img
-              src="~assets/images/trash.png"
-              alt="User Avatar"
-              class="w-4 h-4 mr-2"
-            />
-            <span class="text-gray-400 text-xs mr-2">12:00 PM</span>
-          </div>
         </li>
+        <div v-for="(data, index) in sidebarData" :key="index">
+          <div
+            :class="{
+              'border-b border-[#2c2c2c]': selectedId !== data.id,
+              'mt-1': selectedId === data.id,
+            }"
+          >
+            <li
+              :class="{
+                'bg-white text-gray-600 hover:text-gray-900':
+                  selectedId === data.id,
+                'bg-transparent  text-[#E3E3E3]': selectedId !== data.id,
+
+                'rounded-lg justify-between cursor-pointer py-1 flex items-center': true,
+              }"
+              @click="moveTo(data?.id)"
+            >
+              <span
+                :class="{
+                  'py-2 ml-1 pl-3 flex text-xs font-semibold items-center ': true,
+                  'border-l-4 border-primary-yellow': selectedId === data.id,
+                }"
+              >
+                {{ data?.lable }}
+              </span>
+              <div class="d-flex items-center">
+                <img
+                  src="~assets/images/message-edit.png"
+                  alt="User Avatar"
+                  class="w-4 h-4 mr-3"
+                  :class="{
+                    'd-none': selectedId !== data.id,
+                  }"
+                />
+                <img
+                  src="~assets/images/trash.png"
+                  alt="User Avatar"
+                  class="w-4 h-4 mr-2"
+                  :class="{
+                    'd-none': selectedId !== data.id,
+                  }"
+                />
+                <span
+                  class="text-gray-400 text-xs mr-2"
+                  :class="{ 'text-white': selectedId !== data.id }"
+                  >{{ data?.time }}</span
+                >
+              </div>
+            </li>
+          </div>
+        </div>
       </ul>
     </nav>
     <footer
@@ -189,6 +227,46 @@
   </aside>
 </template>
 <script setup>
+const sidebarData = [
+  {
+    id: 1,
+    lable: "I need personal Tax advice",
+    time: "12:00 PM",
+  },
+  {
+    id: 2,
+    lable: "I need personal Tax advice",
+    time: "12:00 PM",
+  },
+  {
+    id: 3,
+    lable: "I need personal Tax advice",
+    time: "12:00 PM",
+  },
+  {
+    id: 4,
+    lable: "I need personal Tax advice",
+    time: "12:00 PM",
+  },
+  {
+    id: 5,
+    lable: "I need personal Tax advice",
+    time: "12:00 PM",
+  },
+  {
+    id: 6,
+    lable: "I need personal Tax advice",
+    time: "12:00 PM",
+  },
+];
+
+const selectedId = useState(() => 1);
+
+const moveTo = (id) => {
+  navigateTo(`/chat/${id}`);
+  selectedId.value = id;
+};
+
 defineProps({
   isOpen: Boolean,
 });

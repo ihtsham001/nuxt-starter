@@ -1,6 +1,6 @@
 <template>
-  <!-- <FreeTrialModal /> -->
   <FreeTrialModalForm />
+  <FileReturn :isOpen="isOpen" />
   <div
     class="flex flex-col justify-center items-center h-screen space-y-4 md:px-20 lg:px-20 xl:px-20 xxl:px-20 px-5 w-9/12 m-auto"
     v-if="!isChat"
@@ -24,6 +24,7 @@
         Get Tax Advice
       </nuxtLink>
       <button
+        @click="openFileReturnModal()"
         class="font-medium text-xs hover:text-black hover:bg-primary-yellow py-2 px-3 rounded border-x border-y border-primary-yellow text-primary-yellow"
       >
         File Tax Return
@@ -64,7 +65,13 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+const isOpen = useState(() => false);
+
+const openFileReturnModal = () => {
+  isOpen.value = true;
+};
+</script>
 <style>
 .message_input:hover {
   border: 2px solid #febd09 !important;
