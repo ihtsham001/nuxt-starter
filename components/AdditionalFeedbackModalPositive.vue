@@ -3,9 +3,7 @@
     v-show="isOpen"
     class="absolute inset-0 flex items-center justify-center bg-[#cacaca] bg-opacity-80 z-40 px-4"
   >
-    <div
-      class="relative overflow-y-auto w-full max-w-4xl h-[38vh] min-h-[38vh] max-h-[38vh] bg-white rounded"
-    >
+    <div class="relative overflow-y-auto w-full max-w-4xl bg-white rounded">
       <div class="flex justify-between items-center p-3 border-b">
         <div class="flex justify-start items-center gap-3">
           <div class="bg-[#D2F4D3] p-2 rounded-full">
@@ -31,7 +29,13 @@
             Provide additional feedback
           </div>
         </div>
-        <div @click="isOpen = false">
+        <div
+          @click="
+            isOpen = false;
+            $emit('Opened', isOpen);
+          "
+          class="cursor-pointer"
+        >
           <svg
             width="20"
             height="20"
@@ -69,7 +73,7 @@
           >
             <button
               type="submit"
-              class="text-[#FEBD09] border-x border-y border-[#FEBD09] p-2 rounded"
+              class="text-[#FEBD09] text-[12px] border-x border-y border-[#FEBD09] p-2 rounded"
             >
               Submit feedback
             </button>
@@ -80,5 +84,7 @@
   </div>
 </template>
 <script setup>
-const isOpen = useState(() => true);
+defineProps({
+  isOpen: false,
+});
 </script>

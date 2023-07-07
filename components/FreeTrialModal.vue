@@ -993,7 +993,7 @@
       </div>
       <div class="mt-3 mb-2 flex flex-col items-center">
         <h1
-          class="text-base md:text-4xl lg:text-4xl xl:text-4xl xxl:text-4xl font-semibold font-poppins text-center leading-relaxed"
+          class="text-base md:text-4xl lg:text-4xl xl:text-4xl xxl:text-4xl font-semibold font-poppins text-center leading-relaxed tracking-wide"
         >
           Start with FREE 7 days Trail
         </h1>
@@ -1003,7 +1003,7 @@
         </p>
         <button
           @click="isOpen = false"
-          class="px-6 py-2 w-full md:w-72 my-2 text-black-800 border border-blue-600 rounded border-2 border-primary-yellow bg-primary-yellow"
+          class="px-6 py-2 w-full md:w-72 my-2 text-black-800 border rounded border-primary-yellow bg-primary-yellow"
         >
           Start Trial
         </button>

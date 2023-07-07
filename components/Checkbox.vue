@@ -6,14 +6,16 @@
       :key="index"
     >
       <li class="w-full mb-2">
-        <div class="flex items-center mr-4 pt-2">
+        <div class="flex items-center mr-4 pt-2 gap-1">
           <label
             class="relative flex cursor-pointer items-center rounded"
             data-ripple-dark="true"
+            :for="fieldName + '_' + index"
           >
             <input
+              :id="fieldName + '_' + index"
               type="checkbox"
-              class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-amber-500 checked:bg-primary-yellow checked:before:bg-primary-yellow"
+              class="before:content[''] peer relative h-4 w-4 cursor-pointer appearance-none rounded-sm border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-amber-500 checked:bg-primary-yellow checked:before:bg-primary-yellow focus:outline-none"
             />
             <div
               class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
@@ -36,6 +38,7 @@
           </label>
           <label
             class="mt-px cursor-pointer select-none font-medium ml-2 text-gray-700"
+            :for="fieldName + '_' + index"
           >
             {{ label }}
           </label>
@@ -45,6 +48,9 @@
   </div>
 </template>
 <script setup>
+defineProps({
+  fieldName: String,
+});
 const lables = ["Yes", "No"];
 </script>
 <style>

@@ -7,17 +7,18 @@
     >
       <li class="w-full rounded-t-lg p-2">
         <div class="flex gap-10 items-center">
-          <div class="inline-flex items-center">
+          <div class="inline-flex items-center gap-1">
             <label
               class="relative flex cursor-pointer items-center rounded-full"
-              for="html"
+              :for="fieldName + '_' + index"
               data-ripple-dark="true"
             >
               <input
-                id="html"
-                name="type"
+                :id="fieldName + '_' + index"
+                :name="fieldName"
                 type="radio"
-                class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-pink-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-pink-500 checked:before:bg-pink-500"
+                class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-pink-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-pink-500 checked:before:bg-pink-500 focus:outline-none"
+                :multiple="fieldName == 'game' ? true : false"
               />
               <div
                 class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-pink-500 opacity-0 transition-opacity peer-checked:opacity-100"
@@ -47,7 +48,10 @@
                 </svg>
               </div>
             </label>
-            <label class="mt-px cursor-pointer text-[#8C95A1] pl-2" for="html">
+            <label
+              class="mt-px cursor-pointer text-[#8C95A1] pl-2"
+              :for="fieldName + '_' + index"
+            >
               {{ lable }}
             </label>
           </div>
@@ -59,6 +63,7 @@
 <script setup>
 defineProps({
   lables: Array,
+  fieldName: String,
 });
 </script>
 <style></style>

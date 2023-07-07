@@ -1,16 +1,16 @@
 <template>
   <FreeTrialModalForm />
-  <FileReturn :isOpen="isOpen" />
+  <FileReturn :isOpen="isOpen" @Opened="getModalStatus()" />
   <div
-    class="flex flex-col justify-center items-center h-screen space-y-4 md:px-20 lg:px-20 xl:px-20 xxl:px-20 px-5 w-9/12 m-auto"
+    class="flex flex-col justify-center items-center h-screen space-y-2 md:px-20 lg:px-20 xl:px-20 xxl:px-20 px-5 w-9/12 m-auto"
     v-if="!isChat"
   >
-    <img src="~assets/images/logo_img.svg" alt="Logo" class="w-40 h-20" />
+    <img src="~assets/images/logo_img.svg" alt="Logo" class="w-40 h-20 mt-0" />
     <p class="text-bold font-medium text-center">
       Welcome to HIVE CPA Firm AI Tax Chat - Your Intelligent Tax Solution
     </p>
     <div
-      class="flex flex-col md:flex-row lg:flex-row xl:flex-row gap-3 justify-end w-full mt-5"
+      class="flex flex-col md:flex-row lg:flex-row xl:flex-row gap-2 justify-end w-full mt-5"
     >
       <button
         class="font-medium text-xs hover:text-black hover:bg-primary-yellow py-2 px-3 rounded border-x border-y border-primary-yellow text-primary-yellow"
@@ -31,7 +31,48 @@
       </button>
     </div>
     <div
-      class="message_input w-70 flex flex-row py-2.5 gap-2 pr-2 items-center md:flex-row lg:flex-row xl:flex-row text-center px-2 rounded-md w-full focus:outline-none hover:border-primary-yellow border border-border-gray text-primary-yellow"
+      class="flex flex-col md:flex-row lg:flex-row xl:flex-row items-center justify-center mt-2 gap-2 w-full"
+    >
+      <div
+        class="w-full flex flex-row gap-3 px-2 items-center md:flex-row lg:flex-row xl:flex-row text-center p-2 rounded-md w-full focus:outline-none border-x-2 border-y-2 hover:border-primary-yellow border-border-gray text-primary-yellow hover:fill-primary-yellow placeholder:hover:text-[#212121] chat-new"
+      >
+        <svg
+          width="20px"
+          height="20px"
+          viewBox="0 0 1024 1024"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill="#C4C9CF"
+            d="m174.72 855.68 135.296-45.12 23.68 11.84C388.096 849.536 448.576 864 512 864c211.84 0 384-166.784 384-352S723.84 160 512 160 128 326.784 128 512c0 69.12 24.96 139.264 70.848 199.232l22.08 28.8-46.272 115.584zm-45.248 82.56A32 32 0 0 1 89.6 896l58.368-145.92C94.72 680.32 64 596.864 64 512 64 299.904 256 96 512 96s448 203.904 448 416-192 416-448 416a461.056 461.056 0 0 1-206.912-48.384l-175.616 58.56z"
+          />
+          <path
+            fill="#C4C9CF"
+            d="M352 576h320q32 0 32 32t-32 32H352q-32 0-32-32t32-32zm32-192h256q32 0 32 32t-32 32H384q-32 0-32-32t32-32z"
+          />
+        </svg>
+
+        <input
+          type="text"
+          class="rounded-md w-full focus:outline-none border-0 bg-transparent placeholder:text-border-gray text-black text-[12px] placeholder:hover:text-[#212121]"
+          placeholder="Ask me anything... "
+          v-model="prompt"
+        />
+        <div class="flex flex-row mr-2">
+          <img
+            src="~assets/images/file.svg"
+            class="right-12 top-6 h-4 w-4 mx-1 text-gray-400 cursor-pointer"
+          />
+          <img
+            src="~assets/images/send.svg"
+            class="right-3 top-6 h-4 w-4 mx-2 text-gray-400 cursor-pointer"
+            @click="sendMessage()"
+          />
+        </div>
+      </div>
+    </div>
+    <!-- <div
+      class="message_input w-70 flex flex-row py-2.5 gap-2 pr-2 items-center md:flex-row lg:flex-row xl:flex-row text-center px-2 rounded-md w-full focus:outline-none hover:border-primary-yellow border border-border-gray text-primary-yellow chat-new"
     >
       <svg
         width="20"
@@ -61,7 +102,7 @@
           class="right-3 top-6 h-4 w-4 ml-1 text-gray-400 cursor-pointer"
         />
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -69,11 +110,24 @@
 const isOpen = useState(() => false);
 
 const openFileReturnModal = () => {
-  isOpen.value = true;
+  isOpen.value = !isOpen.value;
+};
+const getModalStatus = (data) => {
+  isOpen.value = data;
 };
 </script>
-<style>
+<style lang="scss">
 .message_input:hover {
   border: 2px solid #febd09 !important;
+}
+.chat-new {
+  stroke: #c4c9cf;
+  &:hover {
+    svg {
+      path {
+        fill: #212121;
+      }
+    }
+  }
 }
 </style>

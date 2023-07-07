@@ -1,10 +1,11 @@
 <template>
   <div
     v-show="isOpen"
-    class="absolute inset-0 flex items-center justify-center bg-gray-700 bg-opacity-50"
+    class="absolute inset-0 flex items-center justify-center z-40 h-max md:h-full"
+    style="background-color: rgba(0, 0, 0, 0.7)"
   >
     <div
-      class="w-11/12 xl:max-w-lg lg:max-w-lg md:max-w-lg py-12 px-5 mx-4 bg-white shadow-xl z-40 rounded-t-2xl rounded-b-2xl"
+      class="w-11/12 md:max-w-[602px] py-12 px-5 mx-4 bg-white shadow-xl z-40 rounded-t-2xl rounded-b-2xl"
     >
       <div
         class="text-base md:text-4xl lg:text-4xl xl:text-4xl xxl:text-4xl text-[#212121] text-center font-medium non-italic"
@@ -23,13 +24,16 @@
         </p>
         <a
           href="https://myfreetaxes.com/"
-          class="px-6 py-2 w-full md:w-72 my-2 text-[#1E293B] text-center hover:text-[#1E293B] font-medium border border-blue-600 rounded border-2 border-primary-yellow bg-primary-yellow underline"
+          class="px-6 py-2 w-full md:w-3/4 my-2 text-[#1E293B] text-center hover:text-[#1E293B] font-medium border rounded border-primary-yellow bg-primary-yellow underline"
         >
           File Online
         </a>
         <div
-          @click="isOpen = false"
-          class="flex items-center gap-2 font-medium"
+          @click="
+            isOpen = false;
+            $emit('Opened', isOpen);
+          "
+          class="flex items-center gap-2 font-medium cursor-pointer mt-[1.4rem]"
         >
           <span
             ><svg

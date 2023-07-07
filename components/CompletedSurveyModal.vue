@@ -1,7 +1,7 @@
 <template>
   <div
     v-show="isOpen"
-    class="absolute inset-0 flex items-center justify-center bg-gray-700 bg-opacity-50"
+    class="absolute inset-0 flex items-center justify-center bg-white bg-opacity-100s"
   >
     <div
       class="w-11/12 xl:max-w-lg lg:max-w-lg md:max-w-lg py-12 px-5 mx-4 bg-white shadow-xl z-40 rounded-t-2xl rounded-b-2xl"
@@ -52,7 +52,10 @@
         </div>
         <div class="mt-3 mb-2 flex flex-col items-center">
           <div
-            @click="isOpen = false"
+            @click="
+              isOpen = false;
+              $emit('lastStep', 6);
+            "
             class="flex items-center justify-center gap-2 font-medium px-6 py-2 border-primary-yellow bg-primary-yellow rounded w-full text-center cursor-pointer"
           >
             <span
