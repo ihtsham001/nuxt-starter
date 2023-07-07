@@ -7,7 +7,8 @@
       <!-- <div v-for="(input, index) in inputs.slice().reverse()" :key="index"> -->
       <template v-if="currentStep === 0">
         <h3
-          class="mb-2 font-[2rem] font-semibold text-gray-900 dark:text-black"
+          class="mb-2 font-[500] text-gray-900 dark:text-black tracking-wide"
+          style="font-size: 1.2rem"
         >
           What’s your marital status?
         </h3>
@@ -15,27 +16,39 @@
         <Checkbox :fieldName="'marital'" />
       </template>
       <template v-if="currentStep === 1">
-        <h3 class="mb-2 font-[500] text-gray-900 dark:text-black pt-4">
+        <h3
+          class="mb-2 font-[500] text-gray-900 dark:text-black tracking-wide"
+          style="font-size: 1.2rem"
+        >
           Do you have dependents?
         </h3>
         <Checkbox :fieldName="'dependant'" />
       </template>
       <template v-else-if="currentStep === 2">
-        <h3 class="mb-4 font-semibold text-gray-900 dark:text-black pt-4">
-          Do you have dependents?
+        <h3
+          class="mb-2 font-[500] text-gray-900 dark:text-black tracking-wide"
+          style="font-size: 1.2rem"
+        >
+          What type of income do you have?
         </h3>
         <div class="flex flex-row flex-wrap justify-start align-start gap-2">
           <IncomeTypeBtn />
         </div>
       </template>
       <template v-else-if="currentStep === 3">
-        <h3 class="mb-2 font-semibold text-gray-900 dark:text-black pt-4">
-          What type of income do you have?
+        <h3
+          class="mb-2 font-[500] text-gray-900 dark:text-black tracking-wide"
+          style="font-size: 1.2rem"
+        >
+          What type of income you have?
         </h3>
         <Radiobox :lables="income" :fieldName="'income'" />
       </template>
       <template v-else-if="currentStep === 4">
-        <h3 class="mb-2 font-semibold text-gray-900 dark:text-black pt-4">
+        <h3
+          class="mb-2 font-[500] text-gray-900 dark:text-black tracking-wide"
+          style="font-size: 1.2rem"
+        >
           Your monthly salary
         </h3>
         <input
@@ -45,13 +58,19 @@
         />
       </template>
       <template v-else-if="currentStep === 5">
-        <h3 class="mb-2 font-semibold text-gray-900 dark:text-black pt-4">
+        <h3
+          class="mb-2 font-[500] text-gray-900 dark:text-black tracking-wide"
+          style="font-size: 1.2rem"
+        >
           What's your favorite games?
         </h3>
         <Radiobox :lables="games" :fieldName="'game'" />
       </template>
       <template v-else-if="currentStep === 6">
-        <h3 class="mb-2 font-semibold text-gray-900 dark:text-black pt-4">
+        <h3
+          class="mb-2 font-[500] text-gray-900 dark:text-black tracking-wide"
+          style="font-size: 1.2rem"
+        >
           How old are you?
         </h3>
         <input

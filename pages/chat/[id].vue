@@ -4,7 +4,7 @@
     :isOpen="isAdditionOpen"
     @Opened="getAddtionalOpened()"
   />
-  <div class="flex flex-col h-screen bg-gray-100 p-4 px-5">
+  <div class="flex flex-col h-screen bg-gray-100 p-4 px-5 chatPanel">
     <div class="flex-1 overflow-y-auto custom-scrollbar">
       <div class="flex flex-col space-y-2">
         <div class="flex items-start justify-start">
@@ -232,11 +232,13 @@ const getAddtionalOpened = (value) => {
   width: 0px;
   background: transparent;
 }
-svg:not(.navigation-button) {
-  stroke: #c4c9cf;
-  &:hover {
-    path {
-      stroke: #febd09;
+.chatPanel {
+  svg:not(.navigation-button) {
+    stroke: #c4c9cf;
+    &:hover {
+      path {
+        stroke: #febd09;
+      }
     }
   }
 }

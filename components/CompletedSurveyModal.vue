@@ -1,7 +1,8 @@
 <template>
   <div
     v-show="isOpen"
-    class="absolute inset-0 flex items-center justify-center bg-white bg-opacity-100s"
+    class="absolute inset-0 flex items-center justify-center"
+    style="background-color: rgb(255 255 255 / 70%) !important; z-index: 40"
   >
     <div
       class="w-11/12 xl:max-w-lg lg:max-w-lg md:max-w-lg py-12 px-5 mx-4 bg-white shadow-xl z-40 rounded-t-2xl rounded-b-2xl"

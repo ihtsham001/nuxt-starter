@@ -9,7 +9,6 @@
         <div class="flex items-center mr-4 pt-2 gap-1">
           <label
             class="relative flex cursor-pointer items-center rounded"
-            data-ripple-dark="true"
             :for="fieldName + '_' + index"
           >
             <input
