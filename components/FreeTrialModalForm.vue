@@ -17,7 +17,7 @@
           <h1
             class="text-base md:text-3xl lg:text-3xl xl:text-3xl xxl:text-3xl font-semibold font-poppins text-center leading-relaxed tracking-wide"
           >
-            Start with FREE 7 days Trail
+            Start with FREE 7 days Trial
           </h1>
           <p class="mb-3 text-sm text-center text-gray-light">
             Please fill the information below and claim your 7days trail.

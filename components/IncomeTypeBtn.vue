@@ -1,9 +1,9 @@
 <template>
   <div v-for="(btn, index) in btnText" :key="index">
     <button
-      class="font-normal py-2 px-3 rounded border border-gray-300 text-gray-400"
+      class="font-normal py-2 px-3 rounded border-x border-y border-gray-300 hover:border-primary-yellow hover:text-primary-yellow text-gray-400"
       :class="{
-        'border-primary-yellow text-primary-yellow': btn.id === selectedId,
+        'border-primary-yellow  text-primary-yellow': btn.id === selectedId,
       }"
       @click="handleClick(btn.id)"
     >

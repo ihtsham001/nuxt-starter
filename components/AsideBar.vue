@@ -1,13 +1,15 @@
 <template>
   <aside
-    class="fixed inset-y-0 left-0 z-30 flex-shrink-0 w-80 border-r border-gray-200 transform duration-300 ease-in-out"
+    class="fixed inset-y-0 left-0 z-30 flex-shrink-0 w-80 px-3 transform duration-300 ease-in-out"
     :class="{
       '-translate-x-full sm:translate-x-0': !isOpen,
       'translate-x-0': isOpen,
     }"
     style="background-color: #212121"
   >
-    <div class="py-6 px-3 flex justify-center border-b border-white">
+    <div
+      class="py-6 px-3 flex justify-center items-center border-b border-[#424242]"
+    >
       <svg
         width="108"
         height="37"
@@ -117,113 +119,115 @@
         </defs>
       </svg>
     </div>
-
-    <nav>
-      <ul class="px-2 pt-2">
-        <li
-          class="py-1 flex items-center font-medium rounded-lg mt-2 mb-3 cursor-pointer border-2 border-dashed border-primary-yellow"
-        >
-          <span class="ml-3">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-            >
-              <path
-                d="M8.2002 4V12.4"
-                stroke="white"
-                stroke-width="1.2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M4 8.19922H12.4"
-                stroke="white"
-                stroke-width="1.2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </span>
-          <span
-            class="py-2 pl-3 flex text-xs items-center font-semibold text-white"
+    <div class="flex justify-between flex-col h-[88vh]">
+      <nav>
+        <ul class="pt-2">
+          <li
+            class="py-1 flex items-center font-medium rounded-lg mt-2 mb-3 cursor-pointer border-x border-y border-dashed border-primary-yellow"
           >
-            New chat
-          </span>
-        </li>
-        <div v-for="(data, index) in sidebarData" :key="index">
-          <div
-            :class="{
-              'border-b border-[#2c2c2c]': selectedId !== data.id,
-              '': selectedId === data.id,
-            }"
-          >
-            <li
-              :class="{
-                'bg-white text-gray-600 hover:text-gray-900':
-                  selectedId === data.id,
-                'bg-transparent  text-[#E3E3E3]': selectedId !== data.id,
-
-                'rounded-lg justify-between cursor-pointer py-1 flex items-center': true,
-              }"
-              @click="moveTo(data?.id)"
-            >
-              <span
-                :class="{
-                  'py-2 ml-1 pl-3 flex text-xs font-semibold items-center ': true,
-                  'border-l-4 border-primary-yellow': selectedId === data.id,
-                }"
+            <span class="ml-3">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
               >
-                {{ data?.lable }}
-              </span>
-              <div class="d-flex items-center">
-                <img
-                  src="~assets/images/message-edit.png"
-                  alt="User Avatar"
-                  class="w-4 h-4 mr-3"
-                  :class="{
-                    'd-none': selectedId !== data.id,
-                  }"
+                <path
+                  d="M8.2002 4V12.4"
+                  stroke="white"
+                  stroke-width="1.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
                 />
-                <img
-                  src="~assets/images/trash.png"
-                  alt="User Avatar"
-                  class="w-4 h-4 mr-2"
-                  :class="{
-                    'd-none': selectedId !== data.id,
-                  }"
+                <path
+                  d="M4 8.19922H12.4"
+                  stroke="white"
+                  stroke-width="1.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
                 />
+              </svg>
+            </span>
+            <span
+              class="py-2 pl-3 flex text-xs items-center font-semibold text-white"
+            >
+              New chat
+            </span>
+          </li>
+          <div v-for="(data, index) in sidebarData" :key="index">
+            <div
+              :class="{
+                'border-b border-[#2c2c2c]': selectedId !== data.id,
+                '': selectedId === data.id,
+              }"
+            >
+              <li
+                :class="{
+                  'bg-white text-gray-600 hover:text-gray-900':
+                    selectedId === data.id,
+                  'bg-transparent  text-[#E3E3E3]': selectedId !== data.id,
+
+                  'rounded-lg justify-between cursor-pointer py-1 flex items-center': true,
+                }"
+                @click="moveTo(data?.id)"
+              >
                 <span
-                  class="text-gray-400 text-xs mr-2"
-                  :class="{ 'text-white': selectedId !== data.id }"
-                  >{{ data?.time }}</span
+                  :class="{
+                    'py-2 ml-1 pl-3 flex text-[12px] font-normal  items-center ': true,
+                    'border-l-4 border-primary-yellow text-[12px]':
+                      selectedId === data.id,
+                  }"
                 >
-              </div>
-            </li>
+                  {{ data?.lable }}
+                </span>
+                <div class="d-flex items-center">
+                  <img
+                    src="~assets/images/message-edit.svg"
+                    alt="User Avatar"
+                    class="w-4 h-4 mr-3"
+                    :class="{
+                      'd-none': selectedId !== data.id,
+                    }"
+                  />
+                  <img
+                    src="~assets/images/trash.svg"
+                    alt="User Avatar"
+                    class="w-4 h-4 mr-2"
+                    :class="{
+                      'd-none': selectedId !== data.id,
+                    }"
+                  />
+                  <span
+                    class="text-[#666] text-[10px] mr-2"
+                    :class="{ 'text-[#D4D4D4]': selectedId !== data.id }"
+                    >{{ data?.time }}</span
+                  >
+                </div>
+              </li>
+            </div>
           </div>
+        </ul>
+      </nav>
+      <footer
+        class="flex justify-between items-center w-full bg-gray-200 py-3 px-3 border-t border-gray-700"
+        style="background-color: #212121"
+      >
+        <div class="flex items-center">
+          <img
+            src="~assets/images/user_dummy.png"
+            alt="User Avatar"
+            class="w-8 h-8 rounded-full border-2 border-primary-yellow"
+          />
+          <span class="text-white text-[12px] ml-2">Alexander Kevin </span>
         </div>
-      </ul>
-    </nav>
-    <footer
-      class="absolute bottom-0 flex justify-between items-center left-0 w-full bg-gray-200 py-3 px-3 border-t border-gray-700"
-      style="background-color: #212121"
-    >
-      <div class="flex items-center">
         <img
-          src="~assets/images/user_dummy.png"
+          src="~assets/images/more.svg"
           alt="User Avatar"
-          class="w-8 h-8 rounded-full"
+          class="w-4 h-4 mr-2"
         />
-        <span class="text-white ml-2">Alexander Kevin </span>
-      </div>
-      <img
-        src="~assets/images/more.svg"
-        alt="User Avatar"
-        class="w-4 h-4 mr-2"
-      />
-    </footer>
+      </footer>
+    </div>
   </aside>
 </template>
 <script setup>

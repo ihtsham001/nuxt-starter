@@ -13,7 +13,10 @@ export default defineNuxtConfig({
   app: {
     head: {
       title: "Hive",
-      link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+      link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap'}
+    
+    ],
       script: [
         {
           src: "https://code.jquery.com/jquery-3.5.1.slim.min.js",
