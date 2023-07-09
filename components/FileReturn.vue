@@ -1,30 +1,34 @@
 <template>
   <div
     v-show="isOpen"
-    class="absolute inset-0 flex items-center justify-center z-40 h-max md:h-full"
+    class="absolute inset-0 flex items-center justify-center z-40 h-full"
     style="background-color: rgba(0, 0, 0, 0.7)"
   >
     <div
-      class="w-11/12 md:max-w-[602px] py-12 px-5 mx-4 bg-white shadow-xl z-40 rounded-t-2xl rounded-b-2xl"
+      class="w-11/12 md:max-w-[602px] py-10 px-3 md:px-5 mx-4 bg-white shadow-xl z-40 rounded-t-2xl rounded-b-2xl"
     >
       <div
-        class="text-base md:text-4xl lg:text-4xl xl:text-4xl xxl:text-4xl text-[#212121] text-center font-medium non-italic"
+        class="text-base md:text-[2.3rem] text-[#212121] text-center font-medium non-italic"
       >
         Free, Easy, Online Filling
       </div>
-      <div class="flex justify-start">
-        <img src="../assets/images/filing.png" alt="filling" />
+      <div class="flex justify-center">
+        <img
+          src="../assets/images/filing.png"
+          alt="filling"
+          class="h-full md:h-[350px]"
+        />
       </div>
-      <div class="mt-3 mb-2 flex flex-col items-center">
+      <div class="mt-2 mb-2 flex flex-col items-center">
         <p
-          class="mb-4 text-sm not-italic text-center text-[#212121] font-medium leading-6"
+          class="mb-2 text-xs md:text-sm not-italic text-center text-[#212121] font-normal leading-6"
         >
           We partner with “myFreeTaxes” to file taxes online. You will be
           redirected to our partner website to complete your online tax filling.
         </p>
         <a
           href="https://myfreetaxes.com/"
-          class="px-6 py-2 w-full md:w-3/4 my-2 text-[#1E293B] text-center hover:text-[#1E293B] font-medium border rounded border-primary-yellow bg-primary-yellow underline"
+          class="px-6 py-2 w-full md:w-3/4 my-2 text-xs md:text-sm text-[#1E293B] text-center hover:text-[#1E293B] font-medium border rounded border-primary-yellow bg-primary-yellow underline"
         >
           File Online
         </a>
@@ -33,7 +37,7 @@
             isOpen = false;
             $emit('Opened', isOpen);
           "
-          class="flex items-center gap-2 font-medium cursor-pointer mt-[1.4rem]"
+          class="flex items-center text-xs md:text-sm gap-2 font-medium cursor-pointer mt-[1.4rem]"
         >
           <span
             ><svg

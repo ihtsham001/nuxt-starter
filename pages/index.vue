@@ -41,6 +41,7 @@
           height="20px"
           viewBox="0 0 1024 1024"
           xmlns="http://www.w3.org/2000/svg"
+          class="hidden md:block"
         >
           <path
             fill="#C4C9CF"
@@ -58,7 +59,7 @@
           placeholder="Ask me anything... "
           v-model="prompt"
         />
-        <div class="flex flex-row mr-2">
+        <div class="flex flex-row mr-5 md:mr-2">
           <img
             src="~assets/images/file.svg"
             class="right-12 top-6 h-4 w-4 mx-1 text-gray-400 cursor-pointer"

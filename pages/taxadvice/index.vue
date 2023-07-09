@@ -1,24 +1,22 @@
 <template>
   <CompletedSurveyModal :isOpen="isOpen" @lastStep="getStep" />
   <div
-    class="flex flex-col items-start justify-center w-1/2 pt-4 h-screen md:w-1/2 lg:w-1/2 xl:w-1/2 xxl:w-1/2 m-auto"
+    class="flex flex-col items-start justify-center pt-4 h-screen w-full md:w-1/2 m-auto px-5 md:px-0"
   >
     <div class="overflow-y-scroll custom-scrollbar" ref="scrollContainer">
       <!-- <div v-for="(input, index) in inputs.slice().reverse()" :key="index"> -->
       <template v-if="currentStep === 0">
-        <h3
-          class="mb-2 font-[500] text-gray-900 dark:text-black tracking-wide"
-          style="font-size: 1.2rem"
+        <div
+          class="mb-2 font-[500] text-[1rem] md:text-[1.3rem] text-gray-900 dark:text-black tracking-wide"
         >
           What’s your marital status?
-        </h3>
+        </div>
 
         <Checkbox :fieldName="'marital'" />
       </template>
       <template v-if="currentStep === 1">
         <h3
-          class="mb-2 font-[500] text-gray-900 dark:text-black tracking-wide"
-          style="font-size: 1.2rem"
+          class="mb-2 font-[500] text-[1rem] md:text-[1.3rem] text-gray-900 dark:text-black tracking-wide"
         >
           Do you have dependents?
         </h3>
@@ -26,8 +24,7 @@
       </template>
       <template v-else-if="currentStep === 2">
         <h3
-          class="mb-2 font-[500] text-gray-900 dark:text-black tracking-wide"
-          style="font-size: 1.2rem"
+          class="mb-4 font-[500] text-[1rem] md:text-[1.3rem] text-gray-900 dark:text-black tracking-wide"
         >
           What type of income do you have?
         </h3>
@@ -37,8 +34,7 @@
       </template>
       <template v-else-if="currentStep === 3">
         <h3
-          class="mb-2 font-[500] text-gray-900 dark:text-black tracking-wide"
-          style="font-size: 1.2rem"
+          class="mb-2 font-[500] text-[1rem] md:text-[1.3rem] text-gray-900 dark:text-black tracking-wide"
         >
           What type of income you have?
         </h3>
@@ -46,21 +42,19 @@
       </template>
       <template v-else-if="currentStep === 4">
         <h3
-          class="mb-2 font-[500] text-gray-900 dark:text-black tracking-wide"
-          style="font-size: 1.2rem"
+          class="mb-2 font-[500] text-[1rem] md:text-[1.3rem] text-gray-900 dark:text-black tracking-wide"
         >
           Your monthly salary
         </h3>
         <input
           type="number"
-          class="border-b-2 w-full py-3 font-semibold text-4xl placeholder:text-2xl mt-2 focus:outline-none"
+          class="border-b-2 w-full py-3 placeholder:text-[#C4C9CF] font-semibold text-4xl placeholder:text-2xl mt-2 focus:outline-none"
           placeholder="Enter Amount"
         />
       </template>
       <template v-else-if="currentStep === 5">
         <h3
-          class="mb-2 font-[500] text-gray-900 dark:text-black tracking-wide"
-          style="font-size: 1.2rem"
+          class="mb-2 font-[500] text-[1rem] md:text-[1.3rem] text-gray-900 dark:text-black tracking-wide"
         >
           What's your favorite games?
         </h3>
@@ -68,26 +62,25 @@
       </template>
       <template v-else-if="currentStep === 6">
         <h3
-          class="mb-2 font-[500] text-gray-900 dark:text-black tracking-wide"
-          style="font-size: 1.2rem"
+          class="mb-2 font-[500] text-[1rem] md:text-[1.3rem] text-gray-900 dark:text-black tracking-wide"
         >
           How old are you?
         </h3>
         <input
           type="date"
-          class="border-b-2 font-normal text-[#C4C9CF] py-3 text-4xl w-full placeholder:text-2xl mt-2 focus:outline-none"
+          class="border-b-2 font-normal text-[#C4C9CF] py-3 text-2xl md:text-3xl w-full placeholder:text-2xl mt-2 focus:outline-none bg-transparent"
           placeholder="Enter Amount"
         />
       </template>
       <!-- </div> -->
     </div>
-    <div class="w-full d-flex mt-4 gap-2">
+    <div class="flex mt-4 gap-2">
       <button
         v-if="currentStep > 0"
         @click="prevStep()"
         class="font-normal font-sm text-black bg-primary-yellow py-2 px-4 rounded border-2 border-primary-yellow text-primary-yellow focus:outline-none"
       >
-        <div class="flex">
+        <div class="flex justify-center">
           <span style="transform: rotate(180deg)">
             <svg
               class="navigation-button"
@@ -119,15 +112,15 @@
             </svg>
           </span>
 
-          <span style="font-size: 0.879rem"> Back </span>
+          <span class="text-[0.879rem]"> Back </span>
         </div>
       </button>
       <button
         @click="nextStep()"
         class="font-normal text-black bg-primary-yellow py-2 px-4 rounded-lg border-2 border-primary-yellow text-primary-yellow focus:outline-none"
       >
-        <div class="flex">
-          <span style="font-size: 0.879rem">
+        <div class="flex justify-center">
+          <span class="text-[0.879rem]">
             {{
               currentStep < 1
                 ? "Get Started"

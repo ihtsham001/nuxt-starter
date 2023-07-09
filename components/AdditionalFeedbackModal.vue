@@ -6,10 +6,10 @@
     <div class="relative overflow-y-auto w-full max-w-4xl bg-white rounded">
       <div class="flex justify-between items-center p-3 border-b">
         <div class="flex justify-start items-center gap-3">
-          <div class="bg-[#FEE2E2] p-2 rounded-full">
+          <div class="bg-[#FEE2E2] p-1 rounded-full">
             <svg
-              width="20"
-              height="20"
+              width="18"
+              height="18"
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -30,9 +30,7 @@
               </defs>
             </svg>
           </div>
-          <div
-            class="text-[#202123] text-sm md:text-xl lg:text-xl xl:text-xl xxl:text-xl font-medium"
-          >
+          <div class="text-[#202123] text-sm md:text-lg font-medium">
             Provide additional feedback
           </div>
         </div>
@@ -44,8 +42,8 @@
           class="cursor-pointer"
         >
           <svg
-            width="20"
-            height="20"
+            width="18"
+            height="18"
             viewBox="0 0 20 20"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -71,35 +69,35 @@
         <form>
           <textarea
             rows="3"
-            class="block p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg border border-[#8E8EA0] resize-none placeholder:text-[#8E8EA0]"
+            class="block p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg border border-[#8E8EA0] resize-none placeholder:text-[#8E8EA0] placeholder:border-[#8E8EA0] focus:ring-0 focus:outline-0"
             placeholder="What was the issue with the response? How could it be improved?"
           ></textarea>
           <div class="flex justify-start items-center gap-2 mt-2">
             <input
               type="checkbox"
-              class="w-4 h-4 accent-primary-yellow text-blue-500 bg-gray-100 border-[#C5C5D2] rounded"
-            /><span class="text-[#343541] font-sm"
+              class="w-3 h-3 accent-primary-yellow text-blue-500 bg-gray-100 border-[#C5C5D2] rounded"
+            /><span class="text-[#343541] text-sm"
               >This is harmful / unsafe</span
             >
           </div>
           <div class="flex justify-start items-center gap-2 mt-2">
             <input
               type="checkbox"
-              class="w-4 h-4 accent-primary-yellow text-blue-500 bg-gray-100 border border-[#C5C5D2] rounded"
-            /><span class="text-[#343541] font-sm">This isn't true</span>
+              class="w-3 h-3 accent-primary-yellow text-blue-500 bg-gray-100 border border-[#C5C5D2] rounded"
+            /><span class="text-[#343541] text-sm">This isn't true</span>
           </div>
           <div class="flex justify-start items-center gap-2 mt-2">
             <input
               type="checkbox"
-              class="w-4 h-4 accent-primary-yellow text-blue-500 bg-gray-100 border-[#C5C5D2] rounded"
-            /><span class="text-[#343541] font-sm">This isn't helpful</span>
+              class="w-3 h-3 accent-primary-yellow text-blue-500 bg-gray-100 border-[#C5C5D2] rounded hover:border-primary-yellow focus:outline-none focus:ring-0 focus:border-[#C5C5D2]"
+            /><span class="text-[#343541] text-sm">This isn't helpful</span>
           </div>
           <div
             class="flex justify-center md:justify-end lg:justify-end xl:justify-end xxl:justify-end items-center mt-3"
           >
             <button
               type="submit"
-              class="text-[#FEBD09] text-[12px] border-x border-y border-[#FEBD09] p-2 rounded"
+              class="text-[#FEBD09] text-[12px] font-normal border-x border-y border-[#FEBD09] p-2 rounded"
             >
               Submit feedback
             </button>

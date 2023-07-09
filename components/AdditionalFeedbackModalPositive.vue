@@ -23,9 +23,7 @@
               />
             </svg>
           </div>
-          <div
-            class="text-[#202123] text-sm md:text-xl lg:text-xl xl:text-xl xxl:text-xl font-medium"
-          >
+          <div class="text-[#202123] text-sm md:text-lg font-medium">
             Provide additional feedback
           </div>
         </div>
@@ -37,8 +35,8 @@
           class="cursor-pointer"
         >
           <svg
-            width="20"
-            height="20"
+            width="18"
+            height="18"
             viewBox="0 0 20 20"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -64,7 +62,7 @@
         <form>
           <textarea
             rows="3"
-            class="block p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg border border-[#8E8EA0] resize-none placeholder:text-[#8E8EA0]"
+            class="block p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg border border-[#8E8EA0] resize-none placeholder:text-[#8E8EA0] focus:outline-0"
             placeholder="What was the issue with the response? How could it be improved?"
           ></textarea>
 
@@ -73,7 +71,7 @@
           >
             <button
               type="submit"
-              class="text-[#FEBD09] text-[12px] border-x border-y border-[#FEBD09] p-2 rounded"
+              class="text-[#FEBD09] text-[12px] font-normal border-x border-y border-[#FEBD09] p-2 rounded"
             >
               Submit feedback
             </button>

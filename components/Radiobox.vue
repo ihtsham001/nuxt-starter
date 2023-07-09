@@ -49,7 +49,7 @@
               </div>
             </label>
             <label
-              class="mt-px cursor-pointer text-[#8C95A1] pl-2"
+              class="mt-px cursor-pointer text-[#212121] font-normal pl-2"
               :for="fieldName + '_' + index"
             >
               {{ lable }}
