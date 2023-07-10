@@ -1,79 +1,77 @@
 <template>
   <CompletedSurveyModal :isOpen="isOpen" @lastStep="getStep" />
   <div
-    class="flex flex-col items-start justify-center pt-4 h-screen w-full md:w-1/2 m-auto px-5 md:px-0"
+    class="flex flex-col items-start justify-center py-4 h-screen w-full md:w-1/2 m-auto px-5 md:px-0"
   >
-    <div class="custom-scrollbar h-auto">
-      <!-- <div v-for="(input, index) in inputs.slice().reverse()" :key="index"> -->
-      <template v-if="currentStep === 0">
-        <div
-          class="mb-2 font-[500] text-[1.1rem] md:text-[1.3rem] text-gray-900 dark:text-black tracking-wide"
-        >
-          What’s your marital status?
-        </div>
+    <!-- <div v-for="(input, index) in inputs.slice().reverse()" :key="index"> -->
+    <template v-if="currentStep === 0">
+      <div
+        class="mb-2 font-[500] text-[1.1rem] md:text-[1.3rem] text-gray-900 dark:text-black tracking-wide"
+      >
+        What’s your marital status?
+      </div>
 
-        <Checkbox :fieldName="'marital'" />
-      </template>
-      <template v-if="currentStep === 1">
-        <h3
-          class="mb-2 font-[500] text-[1.1rem] md:text-[1.3rem] text-nowrap text-gray-900 dark:text-black tracking-wide"
-        >
-          Do you have dependents?
-        </h3>
-        <Checkbox :fieldName="'dependant'" />
-      </template>
-      <template v-else-if="currentStep === 2">
-        <h3
-          class="mb-4 font-[500] text-[1.1rem] md:text-[1.3rem] text-gray-900 dark:text-black tracking-wide"
-        >
-          What type of income do you have?
-        </h3>
-        <div class="flex flex-row flex-wrap justify-start align-start gap-2">
-          <IncomeTypeBtn />
-        </div>
-      </template>
-      <template v-else-if="currentStep === 3">
-        <h3
-          class="mb-2 font-[500] text-[1.1rem] md:text-[1.3rem] text-gray-900 dark:text-black tracking-wide"
-        >
-          What type of income you have?
-        </h3>
-        <Radiobox :lables="income" :fieldName="'income'" />
-      </template>
-      <template v-else-if="currentStep === 4">
-        <h3
-          class="mb-2 font-[500] text-[1.1rem] md:text-[1.3rem] text-gray-900 dark:text-black tracking-wide"
-        >
-          Your monthly salary
-        </h3>
-        <input
-          type="number"
-          class="border-b-2 w-full py-3 placeholder:text-[#C4C9CF] font-semibold text-4xl placeholder:text-2xl mt-2 focus:outline-none"
-          placeholder="Enter Amount"
-        />
-      </template>
-      <template v-else-if="currentStep === 5">
-        <h3
-          class="mb-2 font-[500] text-[1.1rem] md:text-[1.3rem] text-gray-900 dark:text-black tracking-wide"
-        >
-          What's your favorite games?
-        </h3>
-        <Radiobox :lables="games" :fieldName="'game'" />
-      </template>
-      <template v-else-if="currentStep === 6">
-        <h3
-          class="mb-2 font-[500] text-[1.1rem] md:text-[1.3rem] text-gray-900 dark:text-black tracking-wide"
-        >
-          How old are you?
-        </h3>
-        <input
-          type="date"
-          class="border-b-2 font-normal text-[#C4C9CF] py-3 text-2xl md:text-3xl w-full placeholder:text-2xl mt-2 focus:outline-none bg-transparent"
-          placeholder="Enter Amount"
-        />
-      </template>
-      <!-- </div> -->
-    </div>
+      <Checkbox :fieldName="'marital'" />
+    </template>
+    <template v-if="currentStep === 1">
+      <h3
+        class="mb-2 font-[500] text-[1.1rem] md:text-[1.3rem] text-nowrap text-gray-900 dark:text-black tracking-wide"
+      >
+        Do you have dependents?
+      </h3>
+      <Checkbox :fieldName="'dependant'" />
+    </template>
+    <template v-else-if="currentStep === 2">
+      <h3
+        class="mb-4 font-[500] text-[1.1rem] md:text-[1.3rem] text-gray-900 dark:text-black tracking-wide"
+      >
+        What type of income do you have?
+      </h3>
+      <div class="flex flex-row flex-wrap justify-start align-start gap-2">
+        <IncomeTypeBtn />
+      </div>
+    </template>
+    <template v-else-if="currentStep === 3">
+      <h3
+        class="mb-2 font-[500] text-[1.1rem] md:text-[1.3rem] text-gray-900 dark:text-black tracking-wide"
+      >
+        What type of income you have?
+      </h3>
+      <Radiobox :lables="income" :fieldName="'income'" />
+    </template>
+    <template v-else-if="currentStep === 4">
+      <h3
+        class="mb-2 font-[500] text-[1.1rem] md:text-[1.3rem] text-gray-900 dark:text-black tracking-wide"
+      >
+        Your monthly salary
+      </h3>
+      <input
+        type="number"
+        class="border-b-2 w-full py-3 placeholder:text-[#C4C9CF] font-semibold text-4xl placeholder:text-2xl mt-2 focus:outline-none"
+        placeholder="Enter Amount"
+      />
+    </template>
+    <template v-else-if="currentStep === 5">
+      <h3
+        class="mb-2 font-[500] text-[1.1rem] md:text-[1.3rem] text-gray-900 dark:text-black tracking-wide"
+      >
+        What's your favorite games?
+      </h3>
+      <Radiobox :lables="games" :fieldName="'game'" />
+    </template>
+    <template v-else-if="currentStep === 6">
+      <h3
+        class="mb-2 font-[500] text-[1.1rem] md:text-[1.3rem] text-gray-900 dark:text-black tracking-wide"
+      >
+        How old are you?
+      </h3>
+      <input
+        type="date"
+        class="border-b-2 font-normal text-[#C4C9CF] py-3 text-2xl md:text-3xl w-full placeholder:text-2xl mt-2 focus:outline-none bg-transparent"
+        placeholder="Enter Amount"
+      />
+    </template>
+    <!-- </div> -->
     <div class="flex mt-4 gap-2">
       <button
         v-if="currentStep > 0"
