@@ -2,7 +2,7 @@
   <div
     v-show="isOpen"
     class="absolute inset-0 flex items-center justify-center z-40 h-full"
-    style="background-color: rgba(0, 0, 0, 0.7)"
+    style="background-color: rgba(0, 0, 0, 0.5)"
   >
     <div
       class="w-11/12 md:max-w-[602px] py-10 px-3 md:px-5 mx-4 bg-white shadow-xl z-40 rounded-t-2xl rounded-b-2xl"

@@ -3,11 +3,11 @@
   <div
     class="flex flex-col items-start justify-center pt-4 h-screen w-full md:w-1/2 m-auto px-5 md:px-0"
   >
-    <div class="overflow-y-scroll custom-scrollbar" ref="scrollContainer">
+    <div class="custom-scrollbar">
       <!-- <div v-for="(input, index) in inputs.slice().reverse()" :key="index"> -->
       <template v-if="currentStep === 0">
         <div
-          class="mb-2 font-[500] text-[1rem] md:text-[1.3rem] text-gray-900 dark:text-black tracking-wide"
+          class="mb-2 font-[500] text-[1.1rem] md:text-[1.3rem] text-gray-900 dark:text-black tracking-wide"
         >
           What’s your marital status?
         </div>
@@ -16,7 +16,7 @@
       </template>
       <template v-if="currentStep === 1">
         <h3
-          class="mb-2 font-[500] text-[1rem] md:text-[1.3rem] text-gray-900 dark:text-black tracking-wide"
+          class="mb-2 font-[500] text-[1.1rem] md:text-[1.3rem] text-nowrap text-gray-900 dark:text-black tracking-wide"
         >
           Do you have dependents?
         </h3>
@@ -24,7 +24,7 @@
       </template>
       <template v-else-if="currentStep === 2">
         <h3
-          class="mb-4 font-[500] text-[1rem] md:text-[1.3rem] text-gray-900 dark:text-black tracking-wide"
+          class="mb-4 font-[500] text-[1.1rem] md:text-[1.3rem] text-gray-900 dark:text-black tracking-wide"
         >
           What type of income do you have?
         </h3>
@@ -34,7 +34,7 @@
       </template>
       <template v-else-if="currentStep === 3">
         <h3
-          class="mb-2 font-[500] text-[1rem] md:text-[1.3rem] text-gray-900 dark:text-black tracking-wide"
+          class="mb-2 font-[500] text-[1.1rem] md:text-[1.3rem] text-gray-900 dark:text-black tracking-wide"
         >
           What type of income you have?
         </h3>
@@ -42,7 +42,7 @@
       </template>
       <template v-else-if="currentStep === 4">
         <h3
-          class="mb-2 font-[500] text-[1rem] md:text-[1.3rem] text-gray-900 dark:text-black tracking-wide"
+          class="mb-2 font-[500] text-[1.1rem] md:text-[1.3rem] text-gray-900 dark:text-black tracking-wide"
         >
           Your monthly salary
         </h3>
@@ -54,7 +54,7 @@
       </template>
       <template v-else-if="currentStep === 5">
         <h3
-          class="mb-2 font-[500] text-[1rem] md:text-[1.3rem] text-gray-900 dark:text-black tracking-wide"
+          class="mb-2 font-[500] text-[1.1rem] md:text-[1.3rem] text-gray-900 dark:text-black tracking-wide"
         >
           What's your favorite games?
         </h3>
@@ -62,7 +62,7 @@
       </template>
       <template v-else-if="currentStep === 6">
         <h3
-          class="mb-2 font-[500] text-[1rem] md:text-[1.3rem] text-gray-900 dark:text-black tracking-wide"
+          class="mb-2 font-[500] text-[1.1rem] md:text-[1.3rem] text-gray-900 dark:text-black tracking-wide"
         >
           How old are you?
         </h3>
@@ -78,6 +78,7 @@
       <button
         v-if="currentStep > 0"
         @click="prevStep()"
+        style="text-shadow: 0 0 black"
         class="font-normal font-sm text-black bg-primary-yellow py-2 px-4 rounded border-2 border-primary-yellow text-primary-yellow focus:outline-none"
       >
         <div class="flex justify-center">
@@ -120,7 +121,7 @@
         class="font-normal text-black bg-primary-yellow py-2 px-4 rounded-lg border-2 border-primary-yellow text-primary-yellow focus:outline-none"
       >
         <div class="flex justify-center">
-          <span class="text-[0.879rem]">
+          <span class="text-[0.86rem]" style="text-shadow: 0 0 black">
             {{
               currentStep < 1
                 ? "Get Started"

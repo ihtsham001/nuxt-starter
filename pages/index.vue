@@ -2,7 +2,7 @@
   <FreeTrialModalForm />
   <FileReturn :isOpen="isOpen" @Opened="getModalStatus()" />
   <div
-    class="flex flex-col justify-center items-center h-screen space-y-2 md:px-20 lg:px-20 xl:px-20 xxl:px-20 px-5 w-9/12 m-auto"
+    class="flex flex-col justify-center items-center h-screen space-y-2 md:px-20 lg:px-20 xl:px-20 xxl:px-20 px-2 w-9/12 m-auto"
     v-if="!isChat"
   >
     <img src="~assets/images/logo_img.svg" alt="Logo" class="w-40 h-20 mt-0" />
@@ -34,7 +34,7 @@
       class="flex flex-col md:flex-row lg:flex-row xl:flex-row items-center justify-center mt-2 gap-2 w-full"
     >
       <div
-        class="w-full flex flex-row gap-3 px-2 items-center md:flex-row lg:flex-row xl:flex-row text-center p-2 rounded-md w-full focus:outline-none border-x-2 border-y-2 hover:border-primary-yellow border-border-gray text-primary-yellow hover:fill-primary-yellow placeholder:hover:text-[#212121] chat-new"
+        class="w-full flex flex-row gap-3 px-2 items-center md:flex-row lg:flex-row xl:flex-row text-center p-2 rounded-md w-full focus:outline-none border-x border-y hover:border-primary-yellow border-border-gray text-primary-yellow hover:fill-primary-yellow placeholder:hover:text-[#212121] chat-new"
       >
         <svg
           width="20px"
@@ -66,7 +66,7 @@
           />
           <img
             src="~assets/images/send.svg"
-            class="right-3 top-6 h-4 w-4 mx-2 text-gray-400 cursor-pointer"
+            class="right-3 top-6 h-4 w-4 mx-1 text-gray-400 cursor-pointer"
             @click="sendMessage()"
           />
         </div>

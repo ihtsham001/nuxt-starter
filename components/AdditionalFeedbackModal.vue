@@ -3,13 +3,15 @@
     v-show="isOpen"
     class="absolute inset-0 flex items-center justify-center bg-[#cacaca] bg-opacity-80 z-40 px-4"
   >
-    <div class="relative overflow-y-auto w-full max-w-4xl bg-white rounded">
+    <div
+      class="relative overflow-y-auto w-full max-w-4xl bg-white rounded ml-1"
+    >
       <div class="flex justify-between items-center p-3 border-b">
         <div class="flex justify-start items-center gap-3">
-          <div class="bg-[#FEE2E2] p-1 rounded-full">
+          <div class="bg-[#FEE2E2] p-2 rounded-full">
             <svg
-              width="18"
-              height="18"
+              width="24"
+              height="24"
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -30,7 +32,7 @@
               </defs>
             </svg>
           </div>
-          <div class="text-[#202123] text-sm md:text-lg font-medium">
+          <div class="text-[#202123] text-[1rem] md:text-lg font-medium">
             Provide additional feedback
           </div>
         </div>
@@ -69,7 +71,7 @@
         <form>
           <textarea
             rows="3"
-            class="block p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg border border-[#8E8EA0] resize-none placeholder:text-[#8E8EA0] placeholder:border-[#8E8EA0] focus:ring-0 focus:outline-0"
+            class="block p-3 md:p-2.5 w-full mb-2 text-sm text-[#8E8EA0] border-[#8E8EA0] bg-white rounded-lg border border-[#8E8EA0] resize-none placeholder:text-[12px] md:placeholder:text-[0.8rem] placeholder:text-[#8E8EA0] focus:outline-0"
             placeholder="What was the issue with the response? How could it be improved?"
           ></textarea>
           <div class="flex justify-start items-center gap-2 mt-2">
@@ -93,7 +95,7 @@
             /><span class="text-[#343541] text-sm">This isn't helpful</span>
           </div>
           <div
-            class="flex justify-center md:justify-end lg:justify-end xl:justify-end xxl:justify-end items-center mt-3"
+            class="flex justify-center md:justify-end lg:justify-end xl:justify-end xxl:justify-end items-center mt-4 md:mt-3"
           >
             <button
               type="submit"

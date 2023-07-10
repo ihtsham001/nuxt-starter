@@ -4,6 +4,8 @@
     :isOpen="isAdditionOpen"
     @Opened="getAddtionalOpened()"
   />
+  <FileReturn :isOpen="isFileModalOpen" @Opened="getFileModalOpened()" />
+
   <div class="flex flex-col h-screen bg-gray-100 p-4 px-5 chatPanel">
     <div class="flex-1 overflow-y-auto custom-scrollbar">
       <div class="flex flex-col space-y-2">
@@ -179,7 +181,7 @@
       class="flex flex-col md:flex-row lg:flex-row xl:flex-row items-center justify-center mt-2 gap-2"
     >
       <div
-        class="w-70 flex flex-row gap-3 px-2 items-center md:flex-row lg:flex-row xl:flex-row text-center p-2 rounded-md w-full focus:outline-none border-x-2 border-y-2 hover:border-primary-yellow border-border-gray text-primary-yellow hover:fill-primary-yellow msg-svg"
+        class="w-70 flex flex-row gap-3 px-2 items-center md:flex-row lg:flex-row xl:flex-row text-center p-2 rounded-md w-full focus:outline-none border-x border-y hover:border-primary-yellow border-border-gray text-primary-yellow hover:fill-primary-yellow msg-svg"
       >
         <svg
           width="20px"
@@ -224,6 +226,11 @@ const prompt = useState(() => "");
 const userChat = useState(() => ["I need personal Tax advice?"]);
 const isOpen = useState(() => false);
 const isAdditionOpen = useState(() => false);
+const isFileModalOpen = useState(() => false);
+
+const openFileReturnModal = () => {
+  isFileModalOpen.value = !isFileModalOpen.value;
+};
 
 onMounted(() => {
   const channel = vueApp.ably.channels.get("shami");
@@ -239,6 +246,9 @@ const sendMessage = async () => {
 };
 const getOpened = (value) => {
   isOpen.value = value;
+};
+const getFileModalOpened = (value) => {
+  isFileModalOpen.value = value;
 };
 
 const getAddtionalOpened = (value) => {

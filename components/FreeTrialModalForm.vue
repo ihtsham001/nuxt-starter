@@ -1,7 +1,7 @@
 <template>
   <div
     v-show="isOpen"
-    class="absolute inset-0 flex items-center justify-center bg-gray-700 bg-opacity-50 h-max md:h-full"
+    class="absolute inset-0 flex items-center justify-center bg-[#000000] bg-opacity-50 h-max md:h-full"
   >
     <div
       class="overflow-y-auto md:overflow-y-hidden md:overflow-y-lg md:overflow-y-xl scroll-hidden min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:max-w-[500px] min-[992px]:max-w-[800px] min-[1200px]:max-w-[1140px] mx-4 bg-white shadow-xl z-40 rounded-t-3xl rounded-b-3xl p-4 my-4"
@@ -32,7 +32,7 @@
                   First Name
                 </label>
                 <input
-                  class="appearance-none block w-full bg-white text-gray-700 border border-greyish-blue rounded py-2 px-2 mb-3 leading-tight focus:outline-none focus:bg-white placeholder:text-xs"
+                  class="appearance-none block w-full text-xs bg-white text-gray-700 border border-greyish-blue rounded py-2 px-2 mb-3 leading-tight focus:outline-none focus:bg-white placeholder:text-xs"
                   id="grid-first-name"
                   type="text"
                   placeholder="eg. richard@piedpiper.com"
@@ -47,7 +47,7 @@
                   Last Name
                 </label>
                 <input
-                  class="appearance-none block w-full bg-white text-gray-700 border border-greyish-blue rounded py-2 px-2 mb-3 leading-tight focus:outline-none focus:bg-white placeholder:text-xs"
+                  class="appearance-none block text-xs w-full bg-white text-gray-700 border border-greyish-blue rounded py-2 px-2 mb-3 leading-tight focus:outline-none focus:bg-white placeholder:text-xs"
                   id="grid-last-name"
                   type="text"
                   placeholder="eg. Piedpiper"
@@ -63,7 +63,7 @@
                   State of Residence
                 </label>
                 <input
-                  class="appearance-none block w-full bg-white text-gray-700 border border-greyish-blue rounded py-2 px-2 mb-3 leading-tight focus:outline-none focus:bg-white placeholder:text-xs"
+                  class="appearance-none text-xs block w-full bg-white text-gray-700 border border-greyish-blue rounded py-2 px-2 mb-3 leading-tight focus:outline-none focus:bg-white placeholder:text-xs"
                   id="grid-residence"
                   type="text"
                   placeholder="Enter Business State"
@@ -79,7 +79,7 @@
                 </label>
                 <div class="relative">
                   <select
-                    class="block appearance-none w-full bg-white border text-stone-gray text-xs hover:text-stone-gray border-gray-400 hover:border-gray-500 px-2 py-2 pr-8 rounded leading-tight focus:outline-none focus:shadow-outline"
+                    class="block appearance-none w-full text-xs bg-white border text-stone-gray text-xs hover:text-stone-gray border-gray-400 hover:border-gray-500 px-2 py-2 pr-8 rounded leading-tight focus:outline-none focus:shadow-outline"
                   >
                     <option>Select</option>
                     <option>Option 1</option>
@@ -128,7 +128,7 @@
                   Set Password
                 </label>
                 <input
-                  class="appearance-none block w-full bg-white text-gray-700 border border-greyish-blue rounded py-2 px-2 mb-1 leading-tight focus:outline-none focus:bg-white placeholder:text-xs"
+                  class="appearance-none block w-full text-xs bg-white text-gray-700 border border-greyish-blue rounded py-2 px-2 mb-1 leading-tight focus:outline-none focus:bg-white placeholder:text-xs"
                   id="grid-password"
                   type="password"
                   placeholder="*********"

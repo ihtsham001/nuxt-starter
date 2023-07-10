@@ -210,7 +210,7 @@
         </ul>
       </nav>
       <footer
-        class="flex justify-between items-center w-full bg-gray-200 py-3 px-3 border-t border-gray-700"
+        class="flex justify-between items-center w-full bg-gray-200 py-3 px-3 border-t border-[#424242]"
         style="background-color: #212121"
       >
         <div class="flex items-center">
